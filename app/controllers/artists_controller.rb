@@ -12,7 +12,7 @@ class ArtistsController < ApplicationController
       when /tracks/ then render partial: "popular_tracks", locals: {artist:, tracks:, limit:, next_track_exists:}
       end
     else
-      render action: :show, locals: {artist:, albums:, tracks:, next_track_exists:}
+      render action: :show, locals: {artist:, albums:, tracks:, limit:, next_track_exists:}
     end
   end
 
