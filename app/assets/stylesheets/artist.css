@@ -17,3 +17,15 @@
 .artist-meta {
   @apply mt-2;
 }
+
+.tracks-navigation-container {
+  @apply flex flex-row justify-between
+}
+
+.tracks-navigation-container .nav-link-container {
+  @apply flex flex-col-reverse
+}
+
+.nav-link-container .nav-link {
+  @apply text-secondary hover:text-primary transition-colors text-small
+}
