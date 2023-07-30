@@ -1,4 +1,14 @@
 class TracksController < ApplicationController
+  def index
+    page_size = 50
+    artist = Artist.find(params[:artist_id])
+    page = params[:page].to_i
+    tracks = artist.tracks.popularity_ordered.limit(page_size).offset(page_size * page)
+    next_page = page + 1 if tracks.count >= page_size
+
+    render locals: {artist:, tracks:, page:, next_page:, page_size:}
+  end
+
   def play
     track = Track.find(params[:id])
 
