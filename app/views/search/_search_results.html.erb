@@ -1,0 +1,32 @@
+<%= turbo_frame_tag :search_result, target: "_top" do %>
+  <%- if @artists.present? || @albums.present? || @tracks.present? %>
+    <ul class="nav--search--results">
+      <% if @artists.any? %>
+        <%- @artists.first(2).each do |artist| %>
+          <li class="nav--search--result">
+              <%= link_to artist.name, artist_path(artist), class: "hover:text-secondary", target: "_self" %>
+          </li>
+        <% end %>
+      <% end %>
+
+      <% if @albums.any? %>
+        <%- @albums.first(2).each do |album| %>
+          <li class="nav--search--result">
+            <%= link_to album.title, album_path(album), class: "hover:text-secondary", target: "_self" %>
+          </li>
+        <% end %>
+      <% end %>
+
+      <% if @tracks.any? %>
+        <%- @tracks.first(3).each do |track| %>
+          <li class="nav--search--result">
+            <%= link_to track.title, play_track_path(track),
+                        class: "hover:text-secondary",
+                        data: {"turbo-frame" => "player", "action" => "click->searchable#clear"} %>
+            <span class="ml-2 text-primary text-xsmall"><%= track.album.title %></span>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  <% end %>
+<% end %>
