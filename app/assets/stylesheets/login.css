@@ -16,3 +16,12 @@
   background-size: contain;
   background-position: center;
 }
+
+.login-form--password-field {
+  @apply flex flex-row justify-between relative;
+}
+
+.login-form--password-visibility-toggle svg {
+  @apply absolute right-1 bottom-1;
+  color: #949494;
+}
