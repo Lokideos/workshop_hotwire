@@ -3,13 +3,27 @@
   <div class="flex justify-center">
     <% if flash[:notice] %>
       <div class="flash notice" role="alert" data-turbo-temporary data-controller="removeable" data-removeable-after-value="5">
-        <p class="text-small"><%= flash[:notice] %></p>
+        <div class="flash-container">
+          <p class="text-small"><%= flash[:notice] %></p>
+          <button class="flash--close-button" data-action="click->removeable#remove">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
       </div>
     <% end %>
 
     <% if flash[:alert] %>
       <div class="flash alert" role="alert" data-turbo-temporary data-controller="removeable" data-removeable-after-value="5">
-        <p class="text-small"><%= flash[:alert] %></p>
+        <div class="flash-container">
+          <p class="text-small"><%= flash[:alert] %></p>
+          <button class="flash--close-button" data-action="click->removeable#remove">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
       </div>
     <% end %>
   </div>
