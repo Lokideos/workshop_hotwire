@@ -364,7 +364,7 @@ DEPENDENCIES
   tailwindcss-rails
   turbo-rails
   turbo_boost-commands
-  turbo_power
+  turbo_power (~> 0.3)
   web-console
 
 RUBY VERSION

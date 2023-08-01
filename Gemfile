@@ -46,7 +46,7 @@ gem "bootsnap", require: false
 gem "freezolite", require: false
 
 # Additional actions for Turbo Streams
-gem 'turbo_power'
+gem "turbo_power", "~> 0.3"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
