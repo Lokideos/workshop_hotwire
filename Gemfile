@@ -45,6 +45,9 @@ gem "bootsnap", require: false
 # Automatically enable frozen_string_literals for project's files [https://github.com/ruby-next/freezolite]
 gem "freezolite", require: false
 
+# Additional actions for Turbo Streams
+gem "turbo_power", "~> 0.3"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug"
