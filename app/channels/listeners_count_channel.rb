@@ -18,12 +18,12 @@ class ListenersCountChannel < ApplicationCable::Channel
 
   def increase_listeners_count
     station.update_listeners_count(station.listeners_online + 1)
-    ActionCable.server.broadcast(channel_name, { count: station.listeners_online })
+    ActionCable.server.broadcast(channel_name, {count: station.listeners_online})
   end
 
   def decrease_listeners_count
     station.update_listeners_count(station.listeners_online - 1)
-    ActionCable.server.broadcast(channel_name, { count: station.listeners_online })
+    ActionCable.server.broadcast(channel_name, {count: station.listeners_online})
   end
 
   def station
